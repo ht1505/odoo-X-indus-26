@@ -1,0 +1,16 @@
+# client
+client/node_modules
+client/.next
+client/.env*
+
+# server
+server/node_modules
+server/.env*
+
+# common
+.env
+node_modules
+.next
+
+# misc
+.DS_Store
