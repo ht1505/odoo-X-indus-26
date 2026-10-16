@@ -1,0 +1,15 @@
+flowchart TD
+    U1[Manager/Staff Browser] -->|JWT via localStorage| FE[Next.js Client\nclient/app/*]
+    FE -->|HTTPS REST| API[Express API\nserver/index.js]
+    API --> AUTH[Auth Controller\ncontrollers/auth.js]
+    API --> OPS[Inventory Controllers\nproducts/receipts/deliveries/transfers/adjustments]
+    API --> DASH[Dashboard Controller\ncontrollers/dashboard.js]
+    API --> CHAT[Chat Controller\ncontrollers/chat.js]
+    AUTH --> MAIL[Gmail SMTP\nutils/mailer.js]
+    CHAT --> GROQ[Groq LLM API]
+    OPS --> ORM[Prisma Client]
+    DASH --> ORM
+    AUTH --> ORM
+    ORM --> DB[(PostgreSQL\nprisma/schema.prisma)]
+    OPS --> LEDGER[StockLedger writes]
+    LEDGER --> DB

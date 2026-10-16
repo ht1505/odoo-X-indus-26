@@ -1,0 +1,13 @@
+flowchart LR
+    A[A: Project initiation\n3d] --> B[B: Requirements baseline\n5d]
+    B --> C[C: Architecture & DB design\n4d]
+    C --> D[D: Backend foundation\n6d]
+    C --> E[E: Frontend shell\n5d]
+    D --> F[F: Inventory backend modules\n8d]
+    E --> G[G: Feature UI integration\n8d]
+    F --> G
+    G --> H[H: System testing & fixes\n6d]
+    H --> I[I: Deployment docs & handover\n3d]
+
+    classDef critical fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d;
+    class A,B,C,D,F,G,H,I critical;

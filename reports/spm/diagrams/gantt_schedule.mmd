@@ -1,0 +1,19 @@
+gantt
+    title CoreInventory Proposed Academic Schedule (43 Working Days)
+    dateFormat  YYYY-MM-DD
+    excludes    weekends
+
+    section Planning
+    A Initiation                         :done, a1, 2026-11-03, 3d
+    B Requirements baseline              :done, a2, after a1, 5d
+    C Architecture and DB design         :done, a3, after a2, 4d
+
+    section Build
+    D Backend foundation                 :active, a4, after a3, 6d
+    E Frontend shell                     :a5, after a3, 5d
+    F Inventory backend modules          :a6, after a4, 8d
+    G Feature UI integration             :a7, after a5 a6, 8d
+
+    section Validation and Release
+    H System testing and fixes           :a8, after a7, 6d
+    I Deployment docs and handover       :milestone, a9, after a8, 3d

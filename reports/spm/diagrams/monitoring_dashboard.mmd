@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph Weekly Monitoring Loop
+      M1[Collect KPI Inputs\n(schedule, cost, defects)] --> M2[Compute EVM\nPV EV AC SV CV SPI CPI]
+      M2 --> M3[Update Milestone Status]
+      M3 --> M4[Risk Review\nprobability-impact refresh]
+      M4 --> M5[Quality Review\ndefect aging + retest status]
+      M5 --> M6[Action Log + Owner Assignment]
+      M6 --> M1
+    end
